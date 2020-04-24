@@ -153,6 +153,42 @@
         "op": "gt",
         "value": 20
       }]
+    }, {
+      "title": "omniledger: login wordpress",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "id": 5,
+      "targets": [{
+          "refId": "A",
+          "target": "omniledger.login-wordpress"
+      }],
+      "alert": {
+        "name": "omniledger: login wordpress",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count" },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "fill": true,
+        "line": true,
+        "op": "gt",
+        "value": 20
+      }]
     }
   ],
   "refresh": "5s",

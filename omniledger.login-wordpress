@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/cas-stress --user-data-path data/cas/userdata-stress.json wordpress https://c4dt.org
