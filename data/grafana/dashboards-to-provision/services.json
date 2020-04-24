@@ -117,6 +117,42 @@
         "op": "gt",
         "value": 20
       }]
+    }, {
+      "title": "omniledger: login matrix",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "id": 4,
+      "targets": [{
+          "refId": "A",
+          "target": "omniledger.login matrix"
+      }],
+      "alert": {
+        "name": "omniledger: login matrix",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count" },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "fill": true,
+        "line": true,
+        "op": "gt",
+        "value": 20
+      }]
     }
   ],
   "refresh": "5s",

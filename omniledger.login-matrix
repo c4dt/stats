@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/cas-stress --user-data-path data/cas/userdata-stress.json matrix https://matrix.c4dt.org
