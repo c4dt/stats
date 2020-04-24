@@ -1,0 +1,40 @@
+version: "3.5"
+
+services:
+  graphite:
+    image: graphiteapp/graphite-statsd:latest
+    ports:
+      - "2003:2003"
+    networks:
+      - stats
+    volumes:
+      - ./data/graphite:/opt/graphite/conf
+      - graphite:/opt/graphite/storage
+  grafana:
+    image: grafana/grafana:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.stats.rule=Host(`stats.c4dt.org`)"
+      - "traefik.http.routers.stats.entrypoints=websecure"
+      - "traefik.http.routers.stats.tls.certresolver=myresolver"
+      - "traefik.http.services.stats.loadbalancer.server.port=3000"
+      - "traefik.docker.network=traefik_traefik"
+    networks:
+      - stats
+      - traefik
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      # TODO remove editor role
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Editor
+    volumes:
+      - ./data/grafana/config:/etc/grafana/provisioning
+      - ./data/grafana/dashboards-to-provision:/var/lib/grafana/dashboards
+
+volumes:
+  graphite:
+
+networks:
+  stats:
+  traefik:
+    external:
+      name: traefik_traefik

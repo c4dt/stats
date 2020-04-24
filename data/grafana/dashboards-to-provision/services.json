@@ -1,0 +1,92 @@
+{
+  "panels": [
+    {
+      "title": "alerts",
+      "type": "alertlist",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "stateFilter": [
+        "paused",
+        "no_data",
+        "execution_error",
+        "alerting",
+        "pending"
+      ]
+    }, {
+      "title": "c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 1,
+      "targets": [{
+        "refId": "A",
+        "target": "c4dt-org.loading-time"
+      }],
+      "alert": {
+        "name": "c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 10 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count" },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 10
+      }]
+    }, {
+      "title": "cothority: transfer a coin",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
+      "id": 2,
+      "targets": [{
+          "refId": "A",
+          "target": "cothority.transfer-coin"
+      }],
+      "alert": {
+        "name": "cothority: transfer a coin",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count" },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "fill": true,
+        "line": true,
+        "op": "gt",
+        "value": 20
+      }]
+    }
+  ],
+  "refresh": "5s",
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "title": "services"
+}

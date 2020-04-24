@@ -1,0 +1,4 @@
+# only include what we need
+/*
+!/.gitignore
+!/storage-schemas.conf

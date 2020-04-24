@@ -1,0 +1,7 @@
+[Unit]
+Description=Measure execution time of %i and send it to Graphite
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h
+ExecStart=%h/bin/send-to-graphite %i bin/time-it ./%i
