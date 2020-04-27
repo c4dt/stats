@@ -37,8 +37,8 @@
             "type": "query"
           }
         ],
-        "for": "5m",
-        "frequency": "1m"
+        "frequency": "1m",
+        "for": "5m"
       },
       "thresholds": [{
         "colorMode": "critical",
@@ -60,19 +60,19 @@
           {
             "evaluator": { "params": [ 20 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "evaluator": { "params": [ 5 ], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
-        "for": "5m",
-        "frequency": "1m"
+        "frequency": "30m",
+        "for": "1h"
       },
       "thresholds": [{
         "colorMode": "critical",
@@ -96,19 +96,19 @@
           {
             "evaluator": { "params": [ 20 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "evaluator": { "params": [ 5 ], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
-        "for": "5m",
-        "frequency": "1m"
+        "frequency": "30m",
+        "for": "1h"
       },
       "thresholds": [{
         "colorMode": "critical",
@@ -132,19 +132,19 @@
           {
             "evaluator": { "params": [ 20 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "evaluator": { "params": [ 5 ], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
-        "for": "5m",
-        "frequency": "1m"
+        "frequency": "30m",
+        "for": "1h"
       },
       "thresholds": [{
         "colorMode": "critical",
@@ -168,19 +168,19 @@
           {
             "evaluator": { "params": [ 20 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "evaluator": { "params": [ 5 ], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
-        "for": "5m",
-        "frequency": "1m"
+        "frequency": "30m",
+        "for": "1h"
       },
       "thresholds": [{
         "colorMode": "critical",
