@@ -33,7 +33,7 @@
             "evaluator": { "params": [ 5 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count" },
+            "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
@@ -67,7 +67,7 @@
             "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count" },
+            "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
@@ -103,7 +103,7 @@
             "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count" },
+            "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
@@ -139,7 +139,7 @@
             "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count" },
+            "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
@@ -175,7 +175,7 @@
             "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count" },
+            "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
