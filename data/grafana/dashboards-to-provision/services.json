@@ -30,7 +30,7 @@
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "count_non_null" },
@@ -64,7 +64,7 @@
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
@@ -100,7 +100,7 @@
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
@@ -136,7 +136,7 @@
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
@@ -172,7 +172,7 @@
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
-            "evaluator": { "params": [ 5 ], "type": "lt" },
+            "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
             "query": { "params": [ "A", "2h30m", "now" ] },
             "reducer": { "type": "count_non_null" },
