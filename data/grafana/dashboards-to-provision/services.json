@@ -18,7 +18,7 @@
       "id": 1,
       "targets": [{
         "refId": "A",
-        "target": "c4dt-org.loading-time"
+        "target": "website.wordpress.loaded"
       }],
       "yaxes": [{
         "format": "s",
