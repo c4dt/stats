@@ -25,7 +25,7 @@
         "name": "c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 10 ], "type": "gt" },
+            "evaluator": { "params": [ 5 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -44,7 +44,7 @@
       "thresholds": [{
         "colorMode": "critical",
         "op": "gt",
-        "value": 10
+        "value": 5
       }]
     }, {
       "title": "cothority: transfer a coin",
@@ -97,7 +97,7 @@
         "name": "cothority: call BEvm",
         "conditions": [
           {
-            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "evaluator": { "params": [ 5 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
@@ -118,7 +118,7 @@
         "fill": true,
         "line": true,
         "op": "gt",
-        "value": 20
+        "value": 5
       }]
     }, {
       "title": "omniledger: login matrix",
@@ -134,7 +134,7 @@
         "name": "omniledger: login matrix",
         "conditions": [
           {
-            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "evaluator": { "params": [ 60 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
@@ -155,7 +155,7 @@
         "fill": true,
         "line": true,
         "op": "gt",
-        "value": 20
+        "value": 60
       }]
     }, {
       "title": "omniledger: login wordpress",
@@ -171,7 +171,7 @@
         "name": "omniledger: login wordpress",
         "conditions": [
           {
-            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "evaluator": { "params": [ 60 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "30m", "now" ] },
             "reducer": { "type": "avg" },
@@ -192,7 +192,7 @@
         "fill": true,
         "line": true,
         "op": "gt",
-        "value": 20
+        "value": 60
       }]
     }
   ],
