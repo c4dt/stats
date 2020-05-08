@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/curl-it https://demo.c4dt.org | grep Demonstrators

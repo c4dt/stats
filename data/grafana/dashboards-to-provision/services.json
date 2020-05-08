@@ -49,94 +49,130 @@
         "op": "gt",
         "value": 5
       }]
+
     }, {
-      "title": "cothority: transfer a coin",
+      "title": "demo.c4dt.org: loading time",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
-      "id": 2,
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
+      "id": 10,
       "targets": [{
-          "refId": "A",
-          "target": "cothority.transfer-coin"
-      }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "20"
-      }, {}],
-      "alert": {
-        "name": "cothority: transfer a coin",
-        "conditions": [
-          {
-            "evaluator": { "params": [ 20 ], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "30m",
-        "for": "1h"
-      },
-      "thresholds": [{
-        "colorMode": "critical",
-        "fill": true,
-        "line": true,
-        "op": "gt",
-        "value": 20
-      }]
-    }, {
-      "title": "cothority: call BEvm",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
-      "id": 3,
-      "targets": [{
-          "refId": "A",
-          "target": "cothority.call-bevm"
+        "refId": "A",
+        "target": "website.demo.loaded"
       }],
       "yaxes": [{
         "format": "s",
         "min": "0", "max": "5"
       }, {}],
       "alert": {
-        "name": "cothority: call BEvm",
+        "name": "demo.c4dt.org: loading time",
         "conditions": [
           {
             "evaluator": { "params": [ 5 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
+            "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
             "evaluator": { "params": [ 4 ], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
+            "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
         ],
-        "frequency": "30m",
-        "for": "1h"
+        "frequency": "1m",
+        "for": "5m"
       },
       "thresholds": [{
         "colorMode": "critical",
-        "fill": true,
-        "line": true,
         "op": "gt",
         "value": 5
       }]
     }, {
+      "title": "showcase.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
+      "id": 11,
+      "targets": [{
+        "refId": "A",
+        "target": "website.showcase.loaded"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "showcase.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "incubator.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
+      "id": 12,
+      "targets": [{
+        "refId": "A",
+        "target": "website.incubator.loaded"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "incubator.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 5
+      }]
+
+    }, {
       "title": "omniledger: login matrix",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
-      "id": 4,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "id": 20,
       "targets": [{
-          "refId": "A",
-          "target": "omniledger.login matrix"
+        "refId": "A",
+        "target": "omniledger.login matrix"
       }],
       "yaxes": [{
         "format": "s",
@@ -172,11 +208,11 @@
     }, {
       "title": "omniledger: login wordpress",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
-      "id": 5,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "id": 21,
       "targets": [{
-          "refId": "A",
-          "target": "omniledger.login-wordpress"
+        "refId": "A",
+        "target": "omniledger.login-wordpress"
       }],
       "yaxes": [{
         "format": "s",
@@ -208,6 +244,202 @@
         "line": true,
         "op": "gt",
         "value": 60
+      }]
+
+    }, {
+      "title": "matrix.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 24 },
+      "id": 30,
+      "targets": [{
+        "refId": "A",
+        "target": "website.matrix.loaded"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "matrix.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "jitsi.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 24 },
+      "id": 31,
+      "targets": [{
+        "refId": "A",
+        "target": "website.jitsi.loaded"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "jitsi.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "cryptpad.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 24 },
+      "id": 32,
+      "targets": [{
+        "refId": "A",
+        "target": "website.cryptpad.loaded"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "cryptpad.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "op": "gt",
+        "value": 5
+      }]
+
+    }, {
+      "title": "cothority: transfer a coin",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
+      "id": 40,
+      "targets": [{
+        "refId": "A",
+        "target": "cothority.transfer-coin"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "20"
+      }, {}],
+      "alert": {
+        "name": "cothority: transfer a coin",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "30m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "2h30m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "30m",
+        "for": "1h"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "fill": true,
+        "line": true,
+        "op": "gt",
+        "value": 20
+      }]
+    }, {
+      "title": "cothority: call BEvm",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
+      "id": 41,
+      "targets": [{
+        "refId": "A",
+        "target": "cothority.call-bevm"
+      }],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
+      "alert": {
+        "name": "cothority: call BEvm",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "30m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "2h30m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "30m",
+        "for": "1h"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "fill": true,
+        "line": true,
+        "op": "gt",
+        "value": 5
       }]
     }
   ],

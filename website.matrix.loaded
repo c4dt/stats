@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/curl-it https://matrix.c4dt.org | grep 'id="matrixchat"'

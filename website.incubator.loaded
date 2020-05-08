@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/curl-it https://incubator.c4dt.org | grep Incubator
