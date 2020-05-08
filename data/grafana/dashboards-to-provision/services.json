@@ -20,7 +20,10 @@
         "refId": "A",
         "target": "c4dt-org.loading-time"
       }],
-      "yaxes": [{ "format": "s" }, {}],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
       "alert": {
         "name": "c4dt.org: loading time",
         "conditions": [
@@ -55,7 +58,10 @@
           "refId": "A",
           "target": "cothority.transfer-coin"
       }],
-      "yaxes": [{ "format": "s" }, {}],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "20"
+      }, {}],
       "alert": {
         "name": "cothority: transfer a coin",
         "conditions": [
@@ -92,7 +98,10 @@
           "refId": "A",
           "target": "cothority.call-bevm"
       }],
-      "yaxes": [{ "format": "s" }, {}],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "5"
+      }, {}],
       "alert": {
         "name": "cothority: call BEvm",
         "conditions": [
@@ -129,7 +138,10 @@
           "refId": "A",
           "target": "omniledger.login matrix"
       }],
-      "yaxes": [{ "format": "s" }, {}],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "60"
+      }, {}],
       "alert": {
         "name": "omniledger: login matrix",
         "conditions": [
@@ -166,7 +178,10 @@
           "refId": "A",
           "target": "omniledger.login-wordpress"
       }],
-      "yaxes": [{ "format": "s" }, {}],
+      "yaxes": [{
+        "format": "s",
+        "min": "0", "max": "60"
+      }, {}],
       "alert": {
         "name": "omniledger: login wordpress",
         "conditions": [
