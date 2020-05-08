@@ -20,6 +20,7 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       # TODO remove editor role
       GF_AUTH_ANONYMOUS_ORG_ROLE: Editor
+      GF_SECURITY_DISABLE_INITIAL_ADMIN_CREATION: "true"
     volumes:
       - ./data/grafana/config:/etc/grafana/provisioning
       - ./data/grafana/dashboards-to-provision:/var/lib/grafana/dashboards
