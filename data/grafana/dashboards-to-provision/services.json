@@ -172,7 +172,7 @@
       "id": 20,
       "targets": [{
         "refId": "A",
-        "target": "omniledger.login matrix"
+        "target": "omniledger.login-matrix"
       }],
       "yaxes": [{
         "format": "s",
