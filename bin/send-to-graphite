@@ -1,12 +1,6 @@
-#!/bin/sh -eux
-
-readonly GRAPHITE_PATH=$1
-shift
-[ $# -eq 0 ] && echo 'missing what to run' && exit 1
+#!/bin/sh -eu
 
 readonly GRAPHITE_HOST=localhost
 readonly GRAPHITE_PORT=2003
 
-timestamp=`date +%s`
-value=`$@`
-echo "$GRAPHITE_PATH $value $timestamp" | nc -N "$GRAPHITE_HOST" "$GRAPHITE_PORT"
+exec nc -N "$GRAPHITE_HOST" "$GRAPHITE_PORT"

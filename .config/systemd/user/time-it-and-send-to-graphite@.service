@@ -4,4 +4,4 @@ Description=Measure execution time of %i and send it to Graphite
 [Service]
 Type=oneshot
 WorkingDirectory=%h
-ExecStart=%h/bin/send-to-graphite %i bin/time-it ./%i
+ExecStart=/bin/sh -euxc 'time=`date +%%s` && echo %i `bin/time-it ./%i` $time | bin/send-to-graphite'

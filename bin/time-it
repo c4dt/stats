@@ -1,3 +1,3 @@
-#!/bin/sh -eux
+#!/bin/sh -eu
 
 exec /usr/bin/time --format=%e "$@" 2>&1 1>/dev/null
