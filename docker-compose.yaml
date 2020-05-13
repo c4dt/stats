@@ -11,7 +11,7 @@ services:
       - ./data/graphite:/opt/graphite/conf
       - graphite:/opt/graphite/storage
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:latest-ubuntu
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.stats.rule=Host(`stats.c4dt.org`)"
@@ -26,7 +26,15 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       # TODO remove editor role
       GF_AUTH_ANONYMOUS_ORG_ROLE: Editor
-      GF_SECURITY_DISABLE_INITIAL_ADMIN_CREATION: "true"
+    entrypoint:
+      - sh
+      - -euc
+      - >-
+        ( readonly api=http://admin:admin@localhost:3000/api &&
+          while ! curl "$$api"; do sleep 1; done &&
+          curl -q "$$api/org/preferences" -XPUT -H 'Content-Type: application/json' --data '{"homeDashboardId":2}' &&
+          curl -q "$$api/admin/users/1" -XDELETE ) &
+        exec /run.sh
     volumes:
       - ./data/grafana/config:/etc/grafana/provisioning
       - ./data/grafana/dashboards-to-provision:/var/lib/grafana/dashboards
