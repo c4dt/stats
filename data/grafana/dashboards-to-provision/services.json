@@ -188,7 +188,7 @@
           {
             "evaluator": { "params": [ 60 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
+            "query": { "params": [ "A", "1h", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
@@ -227,7 +227,7 @@
           {
             "evaluator": { "params": [ 60 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
+            "query": { "params": [ "A", "1h", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
@@ -385,7 +385,7 @@
           {
             "evaluator": { "params": [ 20 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
+            "query": { "params": [ "A", "1h", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
@@ -424,7 +424,7 @@
           {
             "evaluator": { "params": [ 5 ], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "30m", "now" ] },
+            "query": { "params": [ "A", "1h", "now" ] },
             "reducer": { "type": "avg" },
             "type": "query"
           }, {
