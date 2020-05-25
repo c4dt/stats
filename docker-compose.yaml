@@ -32,8 +32,9 @@ services:
       - >-
         ( readonly api=http://admin:admin@localhost:3000/api &&
           while ! curl "$$api"; do sleep 1; done &&
-          curl -q "$$api/org/preferences" -XPUT -H 'Content-Type: application/json' --data '{"homeDashboardId":2}' &&
-          curl -q "$$api/admin/users/1" -XDELETE ) &
+          dashboard=`curl "$$api/search?type=dash-db&query=services" | sed -E 's,.*"id":([[:digit:]]+).*,\1,'` &&
+          curl "$$api/org/preferences" -XPUT -H 'Content-Type: application/json' --data "{\"homeDashboardId\":$$dashboard}" &&
+          curl "$$api/admin/users/1" -XDELETE ) &
         exec /run.sh
     volumes:
       - ./data/grafana/config:/etc/grafana/provisioning
