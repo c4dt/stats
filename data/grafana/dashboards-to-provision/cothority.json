@@ -33,6 +33,7 @@
       "thresholds": [{
         "colorMode": "critical",
         "line": true,
+        "fill": true,
         "op": "gt",
         "value": 60
       }]
@@ -69,6 +70,7 @@
       "thresholds": [{
         "colorMode": "critical",
         "line": true,
+        "fill": true,
         "op": "gt",
         "value": 60
       }]
@@ -106,6 +108,7 @@
       "thresholds": [{
         "colorMode": "critical",
         "line": true,
+        "fill": true,
         "op": "gt",
         "value": 20
       }]
@@ -142,6 +145,7 @@
       "thresholds": [{
         "colorMode": "critical",
         "line": true,
+        "fill": true,
         "op": "gt",
         "value": 5
       }]
