@@ -22,13 +22,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "3"
       }, {}],
       "alert": {
         "name": "c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 3 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -62,13 +62,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "demo.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -101,13 +101,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "showcase.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -140,13 +140,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "incubator.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -259,13 +259,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "matrix.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -298,13 +298,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "jitsi.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -337,13 +337,13 @@
       }],
       "yaxes": [{
         "format": "s",
-        "min": "0", "max": "5"
+        "min": "0", "max": "1"
       }, {}],
       "alert": {
         "name": "cryptpad.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [ 1 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
