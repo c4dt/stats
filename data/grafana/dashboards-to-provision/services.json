@@ -20,10 +20,7 @@
         "refId": "A",
         "target": "website.wordpress.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "3"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "c4dt.org: loading time",
         "conditions": [
@@ -60,10 +57,7 @@
         "refId": "A",
         "target": "website.demo.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "demo.c4dt.org: loading time",
         "conditions": [
@@ -99,10 +93,7 @@
         "refId": "A",
         "target": "website.showcase.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "showcase.c4dt.org: loading time",
         "conditions": [
@@ -138,10 +129,7 @@
         "refId": "A",
         "target": "website.incubator.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "incubator.c4dt.org: loading time",
         "conditions": [
@@ -178,10 +166,7 @@
         "refId": "A",
         "target": "omniledger.login-matrix"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "60"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "omniledger: login matrix",
         "conditions": [
@@ -217,10 +202,7 @@
         "refId": "A",
         "target": "omniledger.login-wordpress"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "60"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "omniledger: login wordpress",
         "conditions": [
@@ -257,10 +239,7 @@
         "refId": "A",
         "target": "website.matrix.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "matrix.c4dt.org: loading time",
         "conditions": [
@@ -296,10 +275,7 @@
         "refId": "A",
         "target": "website.jitsi.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "jitsi.c4dt.org: loading time",
         "conditions": [
@@ -335,10 +311,7 @@
         "refId": "A",
         "target": "website.cryptpad.loaded"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "1"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "cryptpad.c4dt.org: loading time",
         "conditions": [
@@ -375,10 +348,7 @@
         "refId": "A",
         "target": "cothority.transfer-coin"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "20"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "cothority: transfer a coin",
         "conditions": [
@@ -414,10 +384,7 @@
         "refId": "A",
         "target": "cothority.call-bevm"
       }],
-      "yaxes": [{
-        "format": "s",
-        "min": "0", "max": "5"
-      }, {}],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "cothority: call BEvm",
         "conditions": [
