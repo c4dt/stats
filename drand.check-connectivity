@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/drand util check drand.c4dt.org:1234 | grep -F 'answers correctly'

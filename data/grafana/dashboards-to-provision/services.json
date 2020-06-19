@@ -3,7 +3,7 @@
     {
       "title": "alerts",
       "type": "alertlist",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
       "stateFilter": [
         "paused",
         "no_data",
@@ -14,7 +14,7 @@
     }, {
       "title": "c4dt.org: loading time",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
       "id": 1,
       "targets": [{
         "refId": "A",
@@ -23,6 +23,43 @@
       "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 3 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "line": true,
+        "fill": true,
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "drand.c4dt.org: connectivity",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "id": 2,
+      "targets": [{
+        "refId": "A",
+        "target": "drand.check-connectivity"
+      }],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "alert": {
+        "name": "drand.c4dt.org: connectivity",
         "conditions": [
           {
             "evaluator": { "params": [ 3 ], "type": "gt" },
