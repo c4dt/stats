@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+ssh drand@drand.c4dt.org /bin/ps -C drand --no-headers -o rss
