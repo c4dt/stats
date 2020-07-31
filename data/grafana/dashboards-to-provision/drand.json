@@ -52,7 +52,7 @@
         "name": "drand.c4dt.org: memory usage",
         "conditions": [
           {
-            "evaluator": { "params": [ 200000 ], "type": "gt" },
+            "evaluator": { "params": [ 500000 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -73,7 +73,7 @@
         "line": true,
         "fill": true,
         "op": "gt",
-        "value": 200000
+        "value": 500000
       }]
   }, {
       "title": "drand.c4dt.org: CPU usage",
