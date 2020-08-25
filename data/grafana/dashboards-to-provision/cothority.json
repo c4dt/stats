@@ -9,7 +9,7 @@
         "refId": "A",
         "target": "omniledger.login-matrix"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "90" }, {}],
       "alert": {
         "name": "omniledger: login matrix",
         "conditions": [
@@ -46,7 +46,7 @@
         "refId": "A",
         "target": "omniledger.login-wordpress"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "90" }, {}],
       "alert": {
         "name": "omniledger: login wordpress",
         "conditions": [
@@ -84,7 +84,7 @@
         "refId": "A",
         "target": "cothority.transfer-coin"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "30" }, {}],
       "alert": {
         "name": "cothority: transfer a coin",
         "conditions": [
@@ -121,7 +121,7 @@
         "refId": "A",
         "target": "cothority.call-bevm"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "7" }, {}],
       "alert": {
         "name": "cothority: call BEvm",
         "conditions": [
