@@ -49,17 +49,17 @@
         "value": 5
       }]
     }, {
-      "title": "drand.c4dt.org: connectivity",
+      "title": "c4dt-org-dev.epfl.ch: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
       "id": 2,
       "targets": [{
         "refId": "A",
-        "target": "drand.check-connectivity"
+        "target": "website.wordpress-dev.loaded"
       }],
       "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
-        "name": "drand.c4dt.org: connectivity",
+        "name": "c4dt-org-dev.epfl.ch: loading time",
         "conditions": [
           {
             "evaluator": { "params": [ 3 ], "type": "gt" },
