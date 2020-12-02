@@ -1,3 +1,3 @@
 #!/bin/sh -eu
 
-bin/curl-it --location https://www.c4dt.org | grep WordPress
+bin/curl-it --location https://c4dt.org | grep WordPress
