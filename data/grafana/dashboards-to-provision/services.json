@@ -90,7 +90,7 @@
       "title": "c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
-      "id": 1,
+      "id": 10,
       "targets": [{
         "refId": "A",
         "target": "website.wordpress.loaded"
@@ -128,7 +128,7 @@
       "title": "omniledger: login matrix",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
-      "id": 20,
+      "id": 11,
       "targets": [{
         "refId": "A",
         "target": "omniledger.login-matrix"
@@ -165,7 +165,7 @@
       "title": "omniledger: login wordpress",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
-      "id": 21,
+      "id": 12,
       "targets": [{
         "refId": "A",
         "target": "omniledger.login-wordpress"
@@ -203,7 +203,7 @@
       "title": "demo.c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 },
-      "id": 10,
+      "id": 20,
       "targets": [{
         "refId": "A",
         "target": "website.demo.loaded"
@@ -240,7 +240,7 @@
       "title": "showcase.c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 16 },
-      "id": 11,
+      "id": 21,
       "targets": [{
         "refId": "A",
         "target": "website.showcase.loaded"
@@ -277,7 +277,7 @@
       "title": "incubator.c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 16 },
-      "id": 12,
+      "id": 22,
       "targets": [{
         "refId": "A",
         "target": "website.incubator.loaded"
