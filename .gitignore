@@ -1,17 +1,20 @@
-# generated
+# bash
 /.bash_history
 /.bash_logout
 /.bashrc
-/.cache/
-/.gitconfig
-/.lesshst
 /.profile
-/.viminfo
+
+# generated
+/.cache/
 /go/
 /snap/
 
 # identity
 /.local/
+/.ssh/
 
 # cloned
 /src/
+
+# system specific
+/data/
