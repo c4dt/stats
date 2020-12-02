@@ -1,0 +1,18 @@
+name: deploy to stats.c4dt.org
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: Burnett01/rsync-deployments@4.1
+        with:
+          switches: --verbose --archive --delete --exclude-from=.gitignore --exclude=/.git
+          remote_path: /home/stats
+          remote_host: stats.c4dt.org
+          remote_user: stats
+          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
