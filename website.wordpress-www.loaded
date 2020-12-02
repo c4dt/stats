@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+bin/curl-it https://www.c4dt.org | grep WordPress

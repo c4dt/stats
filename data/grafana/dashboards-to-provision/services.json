@@ -20,7 +20,44 @@
         "refId": "A",
         "target": "website.wordpress.loaded"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
+      "alert": {
+        "name": "c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 3 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "line": true,
+        "fill": true,
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "www.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "id": 1,
+      "targets": [{
+        "refId": "A",
+        "target": "website.wordpress-www.loaded"
+      }],
+      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
       "alert": {
         "name": "c4dt.org: loading time",
         "conditions": [
@@ -57,7 +94,7 @@
         "refId": "A",
         "target": "website.wordpress-dev.loaded"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
       "alert": {
         "name": "c4dt-org-dev.epfl.ch: loading time",
         "conditions": [
