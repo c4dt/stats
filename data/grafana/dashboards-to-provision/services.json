@@ -12,43 +12,6 @@
         "pending"
       ]
     }, {
-      "title": "c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
-      "id": 1,
-      "targets": [{
-        "refId": "A",
-        "target": "website.wordpress.loaded"
-      }],
-      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
-      "alert": {
-        "name": "c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [ 3 ], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
-      },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-    }, {
       "title": "www.c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
@@ -124,94 +87,20 @@
       }]
 
     }, {
-      "title": "demo.c4dt.org: loading time",
+      "title": "c4dt.org: loading time",
       "type": "graph",
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
-      "id": 10,
+      "id": 1,
       "targets": [{
         "refId": "A",
-        "target": "website.demo.loaded"
+        "target": "website.wordpress.loaded"
       }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
       "alert": {
-        "name": "demo.c4dt.org: loading time",
+        "name": "c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [ 1 ], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
-      },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-    }, {
-      "title": "showcase.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
-      "id": 11,
-      "targets": [{
-        "refId": "A",
-        "target": "website.showcase.loaded"
-      }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
-      "alert": {
-        "name": "showcase.c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [ 1 ], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
-      },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-    }, {
-      "title": "incubator.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
-      "id": 12,
-      "targets": [{
-        "refId": "A",
-        "target": "website.incubator.loaded"
-      }],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
-      "alert": {
-        "name": "incubator.c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [ 1 ], "type": "gt" },
+            "evaluator": { "params": [ 3 ], "type": "gt" },
             "operator": { "type": "and" },
             "query": { "params": [ "A", "5m", "now" ] },
             "reducer": { "type": "avg" },
@@ -238,7 +127,7 @@
     }, {
       "title": "omniledger: login matrix",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
       "id": 20,
       "targets": [{
         "refId": "A",
@@ -275,7 +164,7 @@
     }, {
       "title": "omniledger: login wordpress",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
       "id": 21,
       "targets": [{
         "refId": "A",
@@ -308,6 +197,118 @@
         "fill": true,
         "op": "gt",
         "value": 60
+      }]
+
+    }, {
+      "title": "demo.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 },
+      "id": 10,
+      "targets": [{
+        "refId": "A",
+        "target": "website.demo.loaded"
+      }],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "alert": {
+        "name": "demo.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 1 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "line": true,
+        "fill": true,
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "showcase.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 16 },
+      "id": 11,
+      "targets": [{
+        "refId": "A",
+        "target": "website.showcase.loaded"
+      }],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "alert": {
+        "name": "showcase.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 1 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "line": true,
+        "fill": true,
+        "op": "gt",
+        "value": 5
+      }]
+    }, {
+      "title": "incubator.c4dt.org: loading time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 16 },
+      "id": 12,
+      "targets": [{
+        "refId": "A",
+        "target": "website.incubator.loaded"
+      }],
+      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "alert": {
+        "name": "incubator.c4dt.org: loading time",
+        "conditions": [
+          {
+            "evaluator": { "params": [ 1 ], "type": "gt" },
+            "operator": { "type": "and" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "avg" },
+            "type": "query"
+          }, {
+            "evaluator": { "params": [ 4 ], "type": "lt" },
+            "operator": { "type": "or" },
+            "query": { "params": [ "A", "5m", "now" ] },
+            "reducer": { "type": "count_non_null" },
+            "type": "query"
+          }
+        ],
+        "frequency": "1m",
+        "for": "5m"
+      },
+      "thresholds": [{
+        "colorMode": "critical",
+        "line": true,
+        "fill": true,
+        "op": "gt",
+        "value": 5
       }]
 
     }, {
