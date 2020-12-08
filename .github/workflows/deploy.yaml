@@ -1,5 +1,9 @@
 name: deploy to stats.c4dt.org
 
+env:
+  DEPLOY_USER: stats
+  DEPLOY_HOST: stats.c4dt.org
+
 on:
   push:
     branches: [main]
@@ -9,10 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: Burnett01/rsync-deployments@4.1
+      - uses: kielabokkie/ssh-key-and-known-hosts-action@v1.1.0
         with:
-          switches: --verbose --archive --delete --exclude-from=.gitignore --exclude=/.git
-          remote_path: /home/stats
-          remote_host: stats.c4dt.org
-          remote_user: stats
-          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
+          ssh-host: ${{ env.DEPLOY_HOST }}
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+      - name: rsync repository
+        run: >
+          rsync --verbose --archive --delete --exclude-from=.gitignore --exclude=/.git
+          "$GITHUB_WORKSPACE/" "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}:"
+      - name: reload systemd's daemon
+        run: ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user daemon-reload
+      - name: start each timers
+        run: >
+          ls "$GITHUB_WORKSPACE/.config/systemd/user/timers.target.wants" |
+          xargs ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user start
