@@ -23,7 +23,7 @@ jobs:
           "$GITHUB_WORKSPACE/" "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}:"
       - name: reload systemd's daemon
         run: ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user daemon-reload
-      - name: start each timers
+      - name: start each timer
         run: >
           ls "$GITHUB_WORKSPACE/.config/systemd/user/timers.target.wants" |
           xargs ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user start
