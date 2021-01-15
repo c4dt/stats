@@ -1,3 +1,0 @@
-#!/bin/sh -eu
-
-bin/curl-it https://jitsi.c4dt.org | grep Jitsi
