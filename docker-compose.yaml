@@ -38,7 +38,7 @@ services:
         exec /run.sh
     volumes:
       - ./data/grafana/config:/etc/grafana/provisioning
-      - ./data/grafana/dashboards-to-provision:/var/lib/grafana/dashboards
+      - ./dashboards-to-provision:/var/lib/grafana/dashboards
 
 volumes:
   graphite:
