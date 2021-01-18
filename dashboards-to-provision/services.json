@@ -1,597 +1,1813 @@
 {
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:7",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "links": [],
   "panels": [
     {
-      "title": "alerts",
-      "type": "alertlist",
-      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+      "dashboardFilter": "",
+      "datasource": null,
+      "folderId": null,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 51,
+      "limit": 10,
+      "nameFilter": "",
+      "onlyAlertsOnDashboard": false,
+      "show": "current",
+      "sortOrder": 1,
       "stateFilter": [
         "paused",
         "no_data",
         "execution_error",
         "alerting",
         "pending"
-      ]
+      ],
+      "title": "alerts",
+      "type": "alertlist"
     },
     {
-      "title": "www.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                3
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m",
+        "name": "c4dt.org: loading time"
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "hiddenSeries": false,
       "id": 1,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "website.wordpress-www.loaded"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
-      "alert": {
-        "name": "c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [3], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
-      },
       "thresholds": [
         {
+          "$$hashKey": "object:925",
           "colorMode": "critical",
-          "line": true,
           "fill": true,
+          "line": true,
           "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "c4dt-org-dev.epfl.ch: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
-      "id": 2,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "website.wordpress-dev.loaded"
+          "value": 5,
+          "yaxis": "left"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
-      "alert": {
-        "name": "c4dt-org-dev.epfl.ch: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [3], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "www.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "c4dt.org: loading time",
       "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
-      "id": 10,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "website.wordpress.loaded"
-        }
-      ],
-      "yaxes": [{ "format": "s", "min": "0", "max": "10" }, {}],
-      "alert": {
-        "name": "c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [3], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
       },
-      "thresholds": [
+      "yaxes": [
         {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "omniledger: login matrix",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
-      "id": 11,
-      "targets": [
+          "$$hashKey": "object:903",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
         {
-          "refId": "A",
-          "target": "omniledger.login-matrix"
+          "$$hashKey": "object:904"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "omniledger: login matrix",
         "conditions": [
           {
-            "evaluator": { "params": [60], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "1h", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                60
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1h",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "2h30m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "2h30m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "1h",
         "frequency": "30m",
-        "for": "1h"
+        "name": "omniledger: login wordpress"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 60
-        }
-      ]
-    },
-    {
-      "title": "omniledger: login wordpress",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "hiddenSeries": false,
       "id": 12,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "omniledger.login-wordpress"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1009",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 60,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "omniledger: login wordpress",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:987",
+          "format": "s",
+          "max": "90",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:988",
+          "max": null
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "omniledger: login wordpress",
         "conditions": [
           {
-            "evaluator": { "params": [60], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "1h", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                3
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "2h30m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
+        "frequency": "1m",
+        "name": "c4dt.org: loading time"
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "website.wordpress.loaded"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {}
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                60
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1h",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "2h30m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
+            "type": "query"
+          }
+        ],
+        "for": "1h",
         "frequency": "30m",
-        "for": "1h"
+        "name": "omniledger: login matrix"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 60
-        }
-      ]
-    },
-    {
-      "title": "demo.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 },
-      "id": 20,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
-          "target": "website.demo.loaded"
+          "target": "omniledger.login-matrix"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1095",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 60,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "omniledger: login matrix",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1073",
+          "format": "s",
+          "max": "90",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1074"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "demo.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
         "frequency": "1m",
-        "for": "5m"
+        "name": "incubator.c4dt.org: loading time"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "showcase.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 16 },
-      "id": 21,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "website.showcase.loaded"
-        }
-      ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
-      "alert": {
-        "name": "showcase.c4dt.org: loading time",
-        "conditions": [
-          {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "1m",
-        "for": "5m"
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 8
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "incubator.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 16 },
+      "hiddenSeries": false,
       "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "website.incubator.loaded"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1183",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "incubator.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1161",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1162"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "incubator.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
         "frequency": "1m",
-        "for": "5m"
+        "name": "demo.c4dt.org: loading time"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "matrix.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 24 },
-      "id": 30,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 16
+      },
+      "hiddenSeries": false,
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
-          "target": "website.matrix.loaded"
+          "target": "website.demo.loaded"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1279",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "demo.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1257",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1258"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "matrix.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
         "frequency": "1m",
-        "for": "5m"
+        "name": "showcase.c4dt.org: loading time"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "library.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 24 },
-      "id": 31,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 16
+      },
+      "hiddenSeries": false,
+      "id": 21,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
-          "target": "website.library.loaded"
+          "target": "website.showcase.loaded"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1367",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "showcase.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1345",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1346"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "library.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
         "frequency": "1m",
-        "for": "5m"
+        "name": "cryptpad.c4dt.org: loading time"
       },
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "line": true,
-          "fill": true,
-          "op": "gt",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "title": "cryptpad.c4dt.org: loading time",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 24 },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 16
+      },
+      "hiddenSeries": false,
       "id": 32,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "website.cryptpad.loaded"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1467",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "cryptpad.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1445",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1446"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
-        "name": "cryptpad.c4dt.org: loading time",
         "conditions": [
           {
-            "evaluator": { "params": [1], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "avg" },
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
             "type": "query"
           },
           {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "5m", "now"] },
-            "reducer": { "type": "count_non_null" },
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
             "type": "query"
           }
         ],
+        "for": "5m",
         "frequency": "1m",
-        "for": "5m"
+        "name": "matrix.c4dt.org: loading time"
       },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 24
+      },
+      "hiddenSeries": false,
+      "id": 30,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "website.matrix.loaded"
+        }
+      ],
       "thresholds": [
         {
+          "$$hashKey": "object:1559",
           "colorMode": "critical",
-          "line": true,
           "fill": true,
+          "line": true,
           "op": "gt",
-          "value": 5
+          "value": 5,
+          "yaxis": "left"
         }
-      ]
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "matrix.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1537",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1538"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
-      "title": "cothority: transfer a coin",
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "type": "count_non_null"
+            },
+            "type": "query"
+          }
+        ],
+        "for": "5m",
+        "frequency": "1m",
+        "name": "library.c4dt.org: loading time"
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 24
+      },
+      "hiddenSeries": false,
+      "id": 31,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "website.library.loaded"
+        }
+      ],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1647",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 5,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "library.c4dt.org: loading time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
       "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1625",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1626"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                10
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1h",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "2h30m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "count_non_null"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "1h",
+        "frequency": "30m",
+        "handler": 1,
+        "name": "cothority: transfer a coin",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 32
+      },
+      "hiddenSeries": false,
       "id": 40,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "cothority.transfer-coin"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
-      "alert": {
-        "name": "cothority: transfer a coin",
-        "conditions": [
-          {
-            "evaluator": { "params": [20], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "1h", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "2h30m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "30m",
-        "for": "1h"
-      },
       "thresholds": [
         {
           "colorMode": "critical",
-          "line": true,
           "fill": true,
+          "line": true,
           "op": "gt",
-          "value": 20
+          "value": 10
         }
-      ]
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "cothority: transfer a coin",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1709",
+          "format": "s",
+          "max": "20",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1710"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
-      "title": "cothority: call BEvm",
-      "type": "graph",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                5
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1h",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                4
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "2h30m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "count_non_null"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "1h",
+        "frequency": "30m",
+        "handler": 1,
+        "name": "cothority: call BEvm",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 32
+      },
+      "hiddenSeries": false,
       "id": 41,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "refId": "A",
           "target": "cothority.call-bevm"
         }
       ],
-      "yaxes": [{ "format": "s", "min": "0" }, {}],
-      "alert": {
-        "name": "cothority: call BEvm",
-        "conditions": [
-          {
-            "evaluator": { "params": [5], "type": "gt" },
-            "operator": { "type": "and" },
-            "query": { "params": ["A", "1h", "now"] },
-            "reducer": { "type": "avg" },
-            "type": "query"
-          },
-          {
-            "evaluator": { "params": [4], "type": "lt" },
-            "operator": { "type": "or" },
-            "query": { "params": ["A", "2h30m", "now"] },
-            "reducer": { "type": "count_non_null" },
-            "type": "query"
-          }
-        ],
-        "frequency": "30m",
-        "for": "1h"
-      },
       "thresholds": [
         {
           "colorMode": "critical",
-          "line": true,
           "fill": true,
+          "line": true,
           "op": "gt",
           "value": 5
         }
-      ]
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "cothority: call BEvm",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1834",
+          "format": "s",
+          "max": "10",
+          "min": "0"
+        },
+        {
+          "$$hashKey": "object:1835"
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
-      "title": "cothority: leader",
-      "type": "heatmap",
-      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 40 },
+      "cards": {
+        "cardPadding": null,
+        "cardRound": null
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateOranges",
+        "exponent": 0.5,
+        "mode": "opacity"
+      },
+      "dataFormat": "tsbuckets",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "heatmap": {},
+      "hideZeroBuckets": false,
+      "highlightCards": true,
       "id": 50,
+      "legend": {
+        "show": false
+      },
+      "reverseYBuckets": true,
       "targets": [
         {
           "refId": "A",
           "target": "aliasSub(aliasByNode(cothority.get-leader.*, 2), '_', '.')"
         }
       ],
-      "color": { "mode": "opacity" },
-      "dataFormat": "tsbuckets",
-      "reverseYBuckets": true,
-      "yBucketBound": "middle"
+      "title": "cothority: leader",
+      "tooltip": {
+        "show": true,
+        "showHistogram": false
+      },
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "xBucketNumber": null,
+      "xBucketSize": null,
+      "yAxis": {
+        "decimals": null,
+        "format": "short",
+        "logBase": 1,
+        "max": null,
+        "min": null,
+        "show": true,
+        "splitFactor": null
+      },
+      "yBucketBound": "middle",
+      "yBucketNumber": null,
+      "yBucketSize": null
     }
   ],
   "refresh": "1m",
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
   "time": {
     "from": "now-12h",
     "to": "now"
   },
-  "title": "services"
+  "timepicker": {},
+  "timezone": "",
+  "title": "services",
+  "uid": "HyIHi4fGz",
+  "variables": {
+    "list": []
+  },
+  "version": 1
 }
