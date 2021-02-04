@@ -321,7 +321,7 @@
           "format": "s",
           "label": "ping time",
           "logBase": 1,
-          "max": "80",
+          "max": "7",
           "min": "0",
           "show": true
         },
