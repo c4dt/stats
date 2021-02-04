@@ -390,7 +390,7 @@
         "for": "5m",
         "frequency": "1m",
         "handler": 1,
-        "name": "icit@c4dt.org alert",
+        "name": "local@c4dt.org alert",
         "noDataState": "no_data",
         "notifications": []
       },
@@ -399,7 +399,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "description": "Additional installation on icit servers using local disks",
+      "description": "Additional installation on c4dtsrv2 using local disks",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -437,7 +437,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "website.wordpress-icit.loaded"
+          "target": "website.wordpress-local.loaded"
         }
       ],
       "thresholds": [
@@ -454,7 +454,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "icit@c4dt.org",
+      "title": "local@c4dt.org",
       "tooltip": {
         "shared": true,
         "sort": 0,
