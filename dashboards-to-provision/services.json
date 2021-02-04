@@ -470,7 +470,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:144",
+          "$$hashKey": "object:143",
           "format": "s",
           "label": "ping time",
           "logBase": 1,
