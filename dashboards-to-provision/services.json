@@ -477,6 +477,9 @@
           "max": "7",
           "min": "0",
           "show": true
+        },
+        {
+          "$$hashKey": "object:144"
         }
       ],
       "yaxis": {
