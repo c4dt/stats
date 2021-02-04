@@ -321,7 +321,7 @@
           "format": "s",
           "label": "ping time",
           "logBase": 1,
-          "max": "7",
+          "max": "80",
           "min": "0",
           "show": true
         },
@@ -470,23 +470,13 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:143",
-          "decimals": 0,
-          "format": "short",
-          "label": "ping-time",
+          "$$hashKey": "object:144",
+          "format": "s",
+          "label": "ping time",
           "logBase": 1,
-          "max": null,
+          "max": "7",
           "min": "0",
           "show": true
-        },
-        {
-          "$$hashKey": "object:144",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
         }
       ],
       "yaxis": {
