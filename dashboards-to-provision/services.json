@@ -342,7 +342,7 @@
           {
             "evaluator": {
               "params": [
-                3
+                5
               ],
               "type": "gt"
             },
@@ -442,13 +442,11 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:413",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 3,
-          "yaxis": "left"
+          "value": 5
         }
       ],
       "timeFrom": null,
@@ -2007,7 +2005,7 @@
     "list": []
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
@@ -2017,5 +2015,5 @@
   "variables": {
     "list": []
   },
-  "version": 5
+  "version": 19
 }
