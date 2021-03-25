@@ -1,13 +1,21 @@
 #!/bin/sh -eu
 
-readonly CURSOR_FILE=data/logs/drand.c4dt.org-cursor
+readonly LOGS_DIR=data/logs
+readonly CURSOR_FILE=$LOGS_DIR/drand.c4dt.org-cursor
 
 cursor=`cat $CURSOR_FILE || :`
 [ -n "$cursor" ] && cursor="--after-cursor $cursor"
 
-ssh drand@drand.c4dt.org /usr/bin/sudo /usr/bin/journalctl --output export --show-cursor $cursor |
-    awk --assign "CURSOR_FILE=$CURSOR_FILE" '
-        /^-- cursor:/ {print substr($0, 12) >CURSOR_FILE}
-        {print}' |
-    /lib/systemd/systemd-journal-remote --output data/logs/drand.c4dt.org.journal - 2>&1 |
-    tail -n1 | cut -d ' ' -f 4
+activity=$(
+	ssh drand@drand.c4dt.org /usr/bin/sudo /usr/bin/journalctl --output export --show-cursor $cursor |
+	    awk --assign "CURSOR_FILE=$CURSOR_FILE" '
+		/^-- cursor:/ {print substr($0, 12) >CURSOR_FILE}
+		{print}' |
+	    /lib/systemd/systemd-journal-remote --output "$LOGS_DIR/drand.c4dt.org.journal" - 2>&1 |
+	    tail -n1 | cut -d ' ' -f 4
+)
+
+touch --date='1 month ago' "$LOGS_DIR/barrier"
+find "$LOGS_DIR" -not -newer "$LOGS_DIR/barrier" -delete
+
+echo $activity
