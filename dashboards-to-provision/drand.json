@@ -5,24 +5,27 @@
       "type": "graph",
       "gridPos": { "h": 8, "w": 24, "x": 0, "y": 0 },
       "id": 1,
-      "targets": [{
-        "refId": "A",
-        "target": "drand.check-connectivity"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "drand.check-connectivity"
+        }
+      ],
       "yaxes": [{ "format": "s", "min": "0" }, {}],
       "alert": {
         "name": "drand.c4dt.org: connectivity",
         "conditions": [
           {
-            "evaluator": { "params": [ 3 ], "type": "gt" },
+            "evaluator": { "params": [3], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -30,37 +33,42 @@
         "frequency": "1m",
         "for": "5m"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-
-  }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 5
+        }
+      ]
+    },
+    {
       "title": "drand.c4dt.org: memory usage",
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
       "id": 10,
-      "targets": [{
-        "refId": "A",
-        "target": "drand.get-used-memory"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "drand.get-used-memory"
+        }
+      ],
       "yaxes": [{ "format": "kbytes", "min": "0" }, {}],
       "alert": {
         "name": "drand.c4dt.org: memory usage",
         "conditions": [
           {
-            "evaluator": { "params": [ 500000 ], "type": "gt" },
+            "evaluator": { "params": [500000], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -68,36 +76,42 @@
         "frequency": "1m",
         "for": "5m"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 500000
-      }]
-  }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 500000
+        }
+      ]
+    },
+    {
       "title": "drand.c4dt.org: CPU usage",
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
       "id": 11,
-      "targets": [{
-        "refId": "A",
-        "target": "drand.get-cpu-percentage"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "drand.get-cpu-percentage"
+        }
+      ],
       "yaxes": [{ "format": "percent", "min": "0" }, {}],
       "alert": {
         "name": "drand.c4dt.org: CPU usage",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [5], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -105,37 +119,42 @@
         "frequency": "1m",
         "for": "5m"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-
-  }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 5
+        }
+      ]
+    },
+    {
       "title": "drand.c4dt.org: TTY activity",
       "type": "graph",
       "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 },
       "id": 20,
-      "targets": [{
-        "refId": "A",
-        "target": "drand.get-tty-activity"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "drand.get-tty-activity"
+        }
+      ],
       "yaxes": [{ "format": "none", "min": "0" }, {}],
       "alert": {
         "name": "drand.c4dt.org: TTY activity",
         "conditions": [
           {
-            "evaluator": { "params": [ 200 ], "type": "gt" },
+            "evaluator": { "params": [200], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "5m", "now" ] },
+            "query": { "params": ["A", "5m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -143,13 +162,15 @@
         "frequency": "1m",
         "for": "5m"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 200
-      }]
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 200
+        }
+      ]
     }
   ],
   "refresh": "1m",

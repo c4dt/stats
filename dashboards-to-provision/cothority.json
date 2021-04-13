@@ -5,24 +5,27 @@
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
       "id": 20,
-      "targets": [{
-        "refId": "A",
-        "target": "omniledger.login-matrix"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "omniledger.login-matrix"
+        }
+      ],
       "yaxes": [{ "format": "s", "min": "0", "max": "90" }, {}],
       "alert": {
         "name": "omniledger: login matrix",
         "conditions": [
           {
-            "evaluator": { "params": [ 60 ], "type": "gt" },
+            "evaluator": { "params": [60], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "1h", "now" ] },
+            "query": { "params": ["A", "1h", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
+            "query": { "params": ["A", "2h30m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -30,36 +33,42 @@
         "frequency": "30m",
         "for": "1h"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 60
-      }]
-    }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 60
+        }
+      ]
+    },
+    {
       "title": "omniledger: login wordpress",
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
       "id": 21,
-      "targets": [{
-        "refId": "A",
-        "target": "omniledger.login-wordpress"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "omniledger.login-wordpress"
+        }
+      ],
       "yaxes": [{ "format": "s", "min": "0", "max": "90" }, {}],
       "alert": {
         "name": "omniledger: login wordpress",
         "conditions": [
           {
-            "evaluator": { "params": [ 60 ], "type": "gt" },
+            "evaluator": { "params": [60], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "1h", "now" ] },
+            "query": { "params": ["A", "1h", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
+            "query": { "params": ["A", "2h30m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -67,37 +76,42 @@
         "frequency": "30m",
         "for": "1h"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 60
-      }]
-
-    }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 60
+        }
+      ]
+    },
+    {
       "title": "cothority: transfer a coin",
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
       "id": 40,
-      "targets": [{
-        "refId": "A",
-        "target": "cothority.transfer-coin"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "cothority.transfer-coin"
+        }
+      ],
       "yaxes": [{ "format": "s", "min": "0", "max": "30" }, {}],
       "alert": {
         "name": "cothority: transfer a coin",
         "conditions": [
           {
-            "evaluator": { "params": [ 20 ], "type": "gt" },
+            "evaluator": { "params": [20], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "1h", "now" ] },
+            "query": { "params": ["A", "1h", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
+            "query": { "params": ["A", "2h30m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -105,36 +119,42 @@
         "frequency": "30m",
         "for": "1h"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 20
-      }]
-    }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 20
+        }
+      ]
+    },
+    {
       "title": "cothority: call BEvm",
       "type": "graph",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
       "id": 41,
-      "targets": [{
-        "refId": "A",
-        "target": "cothority.call-bevm"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "cothority.call-bevm"
+        }
+      ],
       "yaxes": [{ "format": "s", "min": "0", "max": "7" }, {}],
       "alert": {
         "name": "cothority: call BEvm",
         "conditions": [
           {
-            "evaluator": { "params": [ 5 ], "type": "gt" },
+            "evaluator": { "params": [5], "type": "gt" },
             "operator": { "type": "and" },
-            "query": { "params": [ "A", "1h", "now" ] },
+            "query": { "params": ["A", "1h", "now"] },
             "reducer": { "type": "avg" },
             "type": "query"
-          }, {
-            "evaluator": { "params": [ 4 ], "type": "lt" },
+          },
+          {
+            "evaluator": { "params": [4], "type": "lt" },
             "operator": { "type": "or" },
-            "query": { "params": [ "A", "2h30m", "now" ] },
+            "query": { "params": ["A", "2h30m", "now"] },
             "reducer": { "type": "count_non_null" },
             "type": "query"
           }
@@ -142,23 +162,27 @@
         "frequency": "30m",
         "for": "1h"
       },
-      "thresholds": [{
-        "colorMode": "critical",
-        "line": true,
-        "fill": true,
-        "op": "gt",
-        "value": 5
-      }]
-
-    }, {
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "line": true,
+          "fill": true,
+          "op": "gt",
+          "value": 5
+        }
+      ]
+    },
+    {
       "title": "cothority: leader",
       "type": "heatmap",
       "gridPos": { "h": 8, "w": 24, "x": 0, "y": 40 },
       "id": 50,
-      "targets": [{
-        "refId": "A",
-        "target": "aliasSub(aliasByNode(cothority.get-leader.*, 2), '_', '.')"
-      }],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasSub(aliasByNode(cothority.get-leader.*, 2), '_', '.')"
+        }
+      ],
       "color": { "mode": "opacity" },
       "dataFormat": "tsbuckets",
       "reverseYBuckets": true,
