@@ -762,7 +762,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 8,
+        "x": 0,
         "y": 16
       },
       "hiddenSeries": false,
@@ -894,8 +894,8 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 0,
-        "y": 24
+        "x": 8,
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 30,
@@ -1026,8 +1026,8 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 8,
-        "y": 24
+        "x": 16,
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 31,
@@ -1158,7 +1158,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 16,
+        "x": 0,
         "y": 24
       },
       "hiddenSeries": false,
@@ -1296,9 +1296,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 32
+        "w": 8,
+        "x": 8,
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 40,
@@ -1435,9 +1435,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 32
+        "w": 8,
+        "x": 16,
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 41,
