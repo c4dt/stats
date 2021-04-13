@@ -1,3 +1,3 @@
 #!/bin/sh -eu
 
-bin/curl-it --location https://showcase.c4dt.org | grep 'showcase projects'
+bin/curl-it --location https://factory.c4dt.org/showcase | grep 'showcase projects'
