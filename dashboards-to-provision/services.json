@@ -1536,7 +1536,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 32
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -1575,6 +1575,60 @@
       "yBucketBound": "middle",
       "yBucketNumber": null,
       "yBucketSize": null
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 40
+      },
+      "id": 55,
+      "options": {
+        "fieldOptions": {
+          "calcs": ["mean"],
+          "defaults": {
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 75
+                },
+                {
+                  "color": "red",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.7.3",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "server.stats.disk-usage"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "stats.c4dt.org: disk usage",
+      "type": "gauge"
     }
   ],
   "refresh": "1m",
@@ -1595,5 +1649,5 @@
   "variables": {
     "list": []
   },
-  "version": 19
+  "version": 22
 }
