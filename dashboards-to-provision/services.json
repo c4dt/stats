@@ -1534,7 +1534,7 @@
       "datasource": null,
       "gridPos": {
         "h": 8,
-        "w": 24,
+        "w": 16,
         "x": 0,
         "y": 32
       },
@@ -1581,8 +1581,8 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 0,
-        "y": 40
+        "x": 16,
+        "y": 32
       },
       "id": 55,
       "options": {
@@ -1639,7 +1639,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {},
@@ -1649,5 +1649,5 @@
   "variables": {
     "list": []
   },
-  "version": 22
+  "version": 23
 }
