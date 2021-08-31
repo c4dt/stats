@@ -1588,7 +1588,7 @@
       "options": {
         "colorMode": "value",
         "fieldOptions": {
-          "calcs": ["mean"],
+          "calcs": ["lastNotNull"],
           "defaults": {
             "mappings": [],
             "max": 100,
