@@ -23,7 +23,7 @@ systemctl --user stop `timer_type@name_of_service`
 You can get a list of all services running for graphite like this:
 
 ```bash
-systemctl --user | grep graphite
+systemctl --user list-units '*graphite*'
 ```
 
 And to restart one of the services:
@@ -35,5 +35,5 @@ systemctl --user restart `timer_type@name_of_service`
 To get a log of what is happening:
 
 ```bash
-journalctl -flb
+journalctl --user --follow --full --boot
 ```
