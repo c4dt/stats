@@ -27,7 +27,7 @@ jobs:
         run: ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user daemon-reload
       - name: stop all timers
         run: >
-          xargs ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" "systemctl --user list-timers |
+          ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" "systemctl --user list-timers |
             awk '/^$/ {exit} NR > 1 {print \$(NF-1)}' |
             xargs systemctl --user stop"
       - name: start each timer
