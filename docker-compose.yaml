@@ -3,8 +3,8 @@ version: "3.5"
 services:
   graphite:
     image: graphiteapp/graphite-statsd:latest
-    ports:
-      - "2003:2003"
+    expose:
+      - "2003"
     networks:
       - stats
     volumes:

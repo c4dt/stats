@@ -1,6 +1,6 @@
 #!/bin/sh -eu
 
-readonly GRAPHITE_HOST=localhost
+readonly GRAPHITE_HOST=$( docker container inspect -f '{{ .NetworkSettings.Networks.stats_stats.IPAddress }}' stats_graphite_1 )
 readonly GRAPHITE_PORT=2003
 
 exec nc -N "$GRAPHITE_HOST" "$GRAPHITE_PORT"
