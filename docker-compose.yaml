@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   graphite:
-    image: graphiteapp/graphite-statsd:latest
+    image: graphiteapp/graphite-statsd:1.1.8-5
     expose:
       - "2003"
     networks:
@@ -11,7 +11,7 @@ services:
       - ./data/graphite:/opt/graphite/conf
       - graphite:/opt/graphite/storage
   grafana:
-    image: grafana/grafana:latest-ubuntu
+    image: grafana/grafana:7.5.12-ubuntu
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.stats.rule=Host(`stats.c4dt.org`)"
