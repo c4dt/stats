@@ -35,3 +35,7 @@ jobs:
         run: >
           ls "$GITHUB_WORKSPACE/.config/systemd/user/timers.target.wants" |
           xargs ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}" systemctl --user start
+      - name: restart docker-compose
+        run: >
+          ssh "${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }}"
+          docker-compose up --detach
