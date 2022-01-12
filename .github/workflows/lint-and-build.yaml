@@ -1,0 +1,30 @@
+name: lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actionsx/prettier@v2
+        with:
+          args: --check .
+
+      - uses: ricardochaves/python-lint@v1.4.0
+        with:
+          python-root-list: dashboards-to-provision
+          extra-isort-options: --profile black
+          extra-mypy-options: --ignore-missing-imports
+          extra-pylint-options: --disable=E0401,W0511
+
+  build:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: make
