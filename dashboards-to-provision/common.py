@@ -56,13 +56,6 @@ def simple_graph(
                     operator=OP_AND,
                     reducerType=RTYPE_AVG,
                 ),
-                AlertCondition(
-                    target=Target(refId="A"),
-                    timeRange=TimeRange(f"{frequency*5}m", "now"),
-                    evaluator=LowerThan(4),
-                    operator=OP_OR,
-                    reducerType=RTYPE_COUNT_NON_NULL,
-                ),
             ],
         ),
     )
