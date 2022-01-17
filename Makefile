@@ -1,5 +1,5 @@
 DASHBOARDS_DIR := dashboards-to-provision
-DASHBOARDS_GENS := $(wildcard $(DASHBOARDS_DIR)/*.dashboard.py)
+DASHBOARDS_GENS := $(shell find $(DASHBOARDS_DIR) -name '*.dashboard.py')
 DASHBOARDS := $(DASHBOARDS_GENS:.dashboard.py=.json)
 
 .PHONY: all
@@ -13,6 +13,6 @@ venv/.requirements-installed: requirements.txt venv/bin/activate
 		pip3 install -r $<
 	touch $@
 
-dashboards-to-provision/%.json: dashboards-to-provision/%.dashboard.py dashboards-to-provision/common.py venv/.requirements-installed
+%.json: %.dashboard.py dashboards-to-provision/common.py venv/.requirements-installed
 	. venv/bin/activate && \
-		PYTHONPATH=$(dir $<):$$PYTHONPATH generate-dashboards $<
+		PYTHONPATH=$(DASHBOARDS_DIR):$$PYTHONPATH generate-dashboard -o $@ $<
