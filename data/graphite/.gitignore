@@ -1,4 +1,5 @@
-# only include what we need
-/*
-!/.gitignore
+# generated config file
+/*.conf
+
+# linked to timers
 !/storage-schemas.conf
