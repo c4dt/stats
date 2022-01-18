@@ -2,7 +2,7 @@
 
 from common import DASHBOARD_TIME_SPAN, simple_graph
 from grafanalib import formatunits as UNITS
-from grafanalib.core import Dashboard, GridPos
+from grafanalib.core import Dashboard, GridPos, Heatmap, HeatmapColor, Target
 
 dashboard = Dashboard(
     title="websites",
@@ -63,6 +63,20 @@ dashboard = Dashboard(
             UNITS.SECONDS,
             frequency=1,
             alert_at=1,
+        ),
+        Heatmap(
+            title="websites hits",
+            gridPos=GridPos(h=12, w=24, x=0, y=24),
+            targets=[
+                Target(
+                    refId="A",
+                    target="aliasByMetric(website.hits.*)",
+                ),
+            ],
+            dataFormat="tsbuckets",
+            yBucketBound="middle",
+            reverseYBuckets=True,
+            color=HeatmapColor(mode="opacity"),
         ),
     ],
 ).auto_panel_ids()

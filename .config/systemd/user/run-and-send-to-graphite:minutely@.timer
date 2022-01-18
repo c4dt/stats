@@ -1,0 +1,9 @@
+[Unit]
+Description=run run-and-send-to-graphite@%i each minutes
+
+[Timer]
+# OnUnitActiveSec is broken: https://github.com/systemd/systemd/issues/6680
+OnCalendar=minutely
+
+[Install]
+WantedBy=timers.target

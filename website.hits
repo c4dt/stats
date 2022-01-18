@@ -1,0 +1,37 @@
+#!/bin/sh -eu
+
+readonly CURSOR_FILE=data/websites-cursor
+
+cursor=`cat $CURSOR_FILE || echo 0`
+
+new_lines=$(ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access)
+
+echo "$new_lines" |
+	awk --assign path=`basename $0` '
+	function datetime_as_seconds(datetime,    date, time, tz, seconds) {
+		match(datetime, "^[[]([[:alnum:]/]+):([[:digit:]:]+) ([+-][[:digit:]]+)[]]$", date_matched)
+		date = date_matched[1]; gsub("/", "-", date)
+		time = date_matched[2]
+		tz = date_matched[3]
+
+		cmd = "date --date=\"" date " " time " " tz "\" +%s"
+		cmd | getline seconds
+		close(cmd)
+
+		return seconds
+	}
+
+	{
+		timestamp = datetime_as_seconds($4 " " $5)
+		host = $((NF - 2)); gsub("\"", "", host)
+
+		hits[host][timestamp] += 1
+	}
+
+	END {
+		for (host in hits)
+			for (timestamp in hits[host])
+				print path "." host "\t" hits[host][timestamp] "\t" timestamp
+	}'
+
+expr $cursor + $(echo "$new_lines" | wc -l) > "$CURSOR_FILE"
