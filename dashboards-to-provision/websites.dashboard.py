@@ -33,17 +33,9 @@ dashboard = Dashboard(
             alert_at=2,
         ),
         simple_graph(
-            "showcase.c4dt.org: loading time",
-            "website.wordpress-local.loaded",
-            GridPos(h=8, w=8, x=0, y=8),
-            UNITS.SECONDS,
-            frequency=1,
-            alert_at=2,
-        ),
-        simple_graph(
             "library.c4dt.org: loading time",
             "website.library.loaded",
-            GridPos(h=8, w=8, x=8, y=8),
+            GridPos(h=8, w=8, x=0, y=8),
             UNITS.SECONDS,
             frequency=1,
             alert_at=1,
@@ -51,7 +43,7 @@ dashboard = Dashboard(
         simple_graph(
             "cryptpad.c4dt.org: loading time",
             "website.cryptpad.loaded",
-            GridPos(h=8, w=8, x=16, y=8),
+            GridPos(h=8, w=8, x=8, y=8),
             UNITS.SECONDS,
             frequency=1,
             alert_at=1,
@@ -59,14 +51,14 @@ dashboard = Dashboard(
         simple_graph(
             "matrix.c4dt.org: loading time",
             "website.matrix.loaded",
-            GridPos(h=8, w=8, x=0, y=16),
+            GridPos(h=8, w=8, x=16, y=8),
             UNITS.SECONDS,
             frequency=1,
             alert_at=1,
         ),
         Heatmap(
             title="websites hits",
-            gridPos=GridPos(h=12, w=24, x=0, y=24),
+            gridPos=GridPos(h=12, w=24, x=0, y=16),
             targets=[
                 Target(
                     refId="A",
