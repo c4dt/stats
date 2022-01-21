@@ -53,7 +53,7 @@ echo "$new_lines" |
 		END {
 			for (service in hits)
 				for (timestamp in hits[service])
-					print path "." service "\t" hits[service][timestamp] "\t" timestamp
+					print path "." service ".count" "\t" hits[service][timestamp] "\t" timestamp
 		}
 	'
 
