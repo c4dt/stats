@@ -62,13 +62,13 @@ dashboard = Dashboard(
             targets=[
                 Target(
                     refId="A",
-                    target="aliasByMetric(website.hits.*)",
+                    target="aliasByNode(website.hits.*.count, 2)",
                 ),
             ],
             dataFormat="tsbuckets",
             yBucketBound="middle",
             reverseYBuckets=True,
-            color=HeatmapColor(mode="opacity"),
+            color=HeatmapColor(mode="opacity", min=0),
         ),
     ],
 ).auto_panel_ids()
