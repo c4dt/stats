@@ -43,6 +43,10 @@ echo "$new_lines" |
 				case /^factory\.c4dt\.org\/(showcase|resources)\//:
 					return "showcase"
 
+				# irrelevant
+				case /\/robots.txt$/:
+					return
+
 				default:
 					print "unknown service: " service > "/dev/stderr"
 					return "unknown"
