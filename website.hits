@@ -1,14 +1,20 @@
 #!/bin/sh -eu
 
 readonly CURSOR_FILE=data/websites-cursor
+readonly STATS_IP=`host -t A stats.c4dt.org | cut -d ' ' -f 4`
 
 cursor=`cat $CURSOR_FILE || echo 0`
 
 new_lines=$(ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access)
 
 echo "$new_lines" |
-	jq --raw-output '"\(.StartUTC) \(.RequestHost)\(.RequestPath)"' |
-	awk --assign path=`basename $0` '
+	jq --raw-output --arg STATS_IP $STATS_IP '
+		if .ClientHost == $STATS_IP then
+			empty
+		else
+			"\(.StartUTC) \(.RequestHost)\(.RequestPath)"
+		end
+	' | awk --assign path=`basename $0` '
 		function datetime_as_seconds(datetime) {
 			cmd = "date --date=\"" datetime "\" +%s"
 			cmd | getline seconds
