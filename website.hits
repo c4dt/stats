@@ -5,9 +5,8 @@ readonly STATS_IP=`host -t A stats.c4dt.org | cut -d ' ' -f 4`
 
 cursor=`cat $CURSOR_FILE || echo 0`
 
-new_lines=$(ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access)
-
-echo "$new_lines" |
+new_lines_approx_count=`ssh stats_client@srv1.c4dt.org wc -l /var/log/traefik/access | cut -d' ' -f1`
+ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access |
 	jq --raw-output --arg STATS_IP $STATS_IP '
 		if .ClientHost == $STATS_IP then
 			empty
@@ -67,4 +66,4 @@ echo "$new_lines" |
 		}
 	'
 
-expr $cursor + $(echo "$new_lines" | wc -l) > "$CURSOR_FILE"
+echo $new_lines_approx_count > "$CURSOR_FILE"
