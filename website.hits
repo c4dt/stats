@@ -14,14 +14,6 @@ ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access |
 			"\(.StartUTC) \(.RequestHost)\(.RequestPath)"
 		end
 	' | awk --assign path=`basename $0` '
-		function datetime_as_seconds(datetime) {
-			cmd = "date --date=\"" datetime "\" +%s"
-			cmd | getline seconds
-			close(cmd)
-
-			return seconds
-		}
-
 		function simplify_service(service) {
 			if (match(service, /^factory\.c4dt\.org\/incubator\/([[:alnum:]]+)\//, matches) != 0) {
 				return "demo-" matches[1]
@@ -53,7 +45,11 @@ ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access |
 		}
 
 		{
-			timestamp = datetime_as_seconds($1)
+			datetime = $1
+
+			gsub("[-T:]", " ", datetime)
+			timestamp = mktime(datetime, "utc")
+
 			service = simplify_service($2)
 			if (service != "")
 				hits[service][timestamp] += 1
