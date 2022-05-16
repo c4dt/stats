@@ -5,10 +5,8 @@ env:
   DEPLOY_HOST: stats.c4dt.org
 
 on:
-  workflow_run:
-    workflows: ["lint"]
+  push:
     branches: [main]
-    types: [completed]
 
 jobs:
   deploy:
