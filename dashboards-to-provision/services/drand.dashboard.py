@@ -28,7 +28,7 @@ dashboard = Dashboard(
             "drand: CPU usage",
             "drand.get-cpu-percentage",
             GridPos(h=8, w=12, x=12, y=8),
-            UNITS.KILO_BYTES,
+            UNITS.PERCENT_FORMAT,
             frequency=1,
             alert_at=1.5,
         ),
