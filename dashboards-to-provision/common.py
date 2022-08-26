@@ -49,11 +49,11 @@ def simple_graph(
             name=title,
             message=title,
             frequency=f"{frequency}m",
-            gracePeriod=f"{frequency*2}m",
+            gracePeriod=f"{frequency*4}m",
             alertConditions=[
                 AlertCondition(
                     target=Target(refId="A"),
-                    timeRange=TimeRange(f"{frequency*2}m", "now"),
+                    timeRange=TimeRange(f"{frequency*4}m", "now"),
                     evaluator=GreaterThan(alert_at),
                     operator=OP_AND,
                     reducerType=RTYPE_AVG,
