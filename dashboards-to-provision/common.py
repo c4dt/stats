@@ -3,6 +3,7 @@
 from typing import Union
 
 from grafanalib.core import (
+    NULL_AS_NULL,
     OP_AND,
     RTYPE_AVG,
     Alert,
@@ -40,6 +41,7 @@ def simple_graph(
                 target=target,
             ),
         ],
+        nullPointMode=NULL_AS_NULL,
         yAxes=YAxes(
             YAxis(format=y_axis_format, min=0, max=alert_at * 1.5),
         ),
@@ -47,11 +49,11 @@ def simple_graph(
             name=title,
             message=title,
             frequency=f"{frequency}m",
-            gracePeriod=f"{frequency*2}m",
+            gracePeriod=f"{frequency*4}m",
             alertConditions=[
                 AlertCondition(
                     target=Target(refId="A"),
-                    timeRange=TimeRange(f"{frequency*2}m", "now"),
+                    timeRange=TimeRange(f"{frequency*4}m", "now"),
                     evaluator=GreaterThan(alert_at),
                     operator=OP_AND,
                     reducerType=RTYPE_AVG,
