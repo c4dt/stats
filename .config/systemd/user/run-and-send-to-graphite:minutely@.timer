@@ -5,5 +5,9 @@ Description=run run-and-send-to-graphite@%i each minutes
 # OnUnitActiveSec is broken: https://github.com/systemd/systemd/issues/6680
 OnCalendar=minutely
 
+# randomize start to avoid using too much ressources
+AccuracySec=100ms
+RandomizedDelaySec=20s
+
 [Install]
 WantedBy=timers.target
