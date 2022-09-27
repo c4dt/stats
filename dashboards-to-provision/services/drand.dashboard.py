@@ -38,7 +38,7 @@ dashboard = Dashboard(
             GridPos(h=8, w=24, x=0, y=16),
             UNITS.COUNTS_PER_MIN,
             frequency=1,
-            alert_at=150,
+            alert_at=300,
         ),
     ],
 ).auto_panel_ids()
