@@ -1,3 +1,0 @@
-#!/bin/sh -eu
-
-bin/cas-test --user-data-path data/cas/userdata-matrix matrix https://matrix.c4dt.org
