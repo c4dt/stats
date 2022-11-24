@@ -6,6 +6,7 @@ from grafanalib.core import Dashboard, GridPos
 
 dashboard = Dashboard(
     title="drand",
+    uid="drand",
     time=DASHBOARD_TIME_SPAN,
     panels=[
         simple_graph(

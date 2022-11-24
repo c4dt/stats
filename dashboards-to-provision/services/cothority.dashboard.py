@@ -6,6 +6,7 @@ from grafanalib.core import Dashboard, GridPos, Heatmap, HeatmapColor, Target
 
 dashboard = Dashboard(
     title="cothority",
+    uid="cothority",
     time=DASHBOARD_TIME_SPAN,
     panels=[
         simple_graph(
