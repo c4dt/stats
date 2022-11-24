@@ -6,6 +6,7 @@ from grafanalib.core import Dashboard, GridPos, Stat, Target, Threshold
 
 dashboard = Dashboard(
     title="servers",
+    uid="servers",
     time=DASHBOARD_TIME_SPAN,
     panels=[
         Stat(

@@ -15,6 +15,7 @@ from grafanalib.core import (
 
 dashboard = Dashboard(
     title="main",
+    uid="main",
     time=DASHBOARD_TIME_SPAN,
     panels=[
         AlertList(
