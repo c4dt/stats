@@ -10,17 +10,9 @@ dashboard = Dashboard(
     time=DASHBOARD_TIME_SPAN,
     panels=[
         simple_graph(
-            "omniledger: login matrix",
-            "omniledger.login-matrix",
-            GridPos(h=8, w=12, x=0, y=0),
-            UNITS.SECONDS,
-            frequency=30,
-            alert_at=60,
-        ),
-        simple_graph(
             "omniledger: login wordpress",
             "omniledger.login-wordpress",
-            GridPos(h=8, w=12, x=12, y=0),
+            GridPos(h=8, w=24, x=0, y=0),
             UNITS.SECONDS,
             frequency=30,
             alert_at=60,
