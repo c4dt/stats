@@ -49,13 +49,5 @@ dashboard = Dashboard(
             frequency=1 * 60,
             alert_at=1,
         ),
-        simple_graph(
-            "matrix.c4dt.org: loading time",
-            Target(expr="website.matrix.loaded"),
-            GridPos(h=8, w=8, x=16, y=8),
-            UNITS.SECONDS,
-            frequency=1 * 60,
-            alert_at=1,
-        ),
     ],
 ).auto_panel_ids()
