@@ -14,7 +14,7 @@ dashboard = Dashboard(
             Target(target="website.wordpress.loaded"),
             GridPos(h=8, w=8, x=0, y=0),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=3,
         ),
         simple_graph(
@@ -22,7 +22,7 @@ dashboard = Dashboard(
             Target(target="website.wordpress-www.loaded"),
             GridPos(h=8, w=8, x=8, y=0),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=3,
         ),
         simple_graph(
@@ -30,7 +30,7 @@ dashboard = Dashboard(
             Target(target="website.showcase.loaded"),
             GridPos(h=8, w=8, x=16, y=0),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=2,
         ),
         simple_graph(
@@ -38,7 +38,7 @@ dashboard = Dashboard(
             Target(target="website.library.loaded"),
             GridPos(h=8, w=8, x=0, y=8),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=1,
         ),
         simple_graph(
@@ -46,7 +46,7 @@ dashboard = Dashboard(
             Target(target="website.cryptpad.loaded"),
             GridPos(h=8, w=8, x=8, y=8),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=1,
         ),
         simple_graph(
@@ -54,7 +54,7 @@ dashboard = Dashboard(
             Target(expr="website.matrix.loaded"),
             GridPos(h=8, w=8, x=16, y=8),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=1,
         ),
     ],
