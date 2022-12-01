@@ -2,7 +2,7 @@
 
 from common import DASHBOARD_TIME_SPAN, simple_graph
 from grafanalib import formatunits as UNITS
-from grafanalib.core import Dashboard, GridPos
+from grafanalib.core import Dashboard, GridPos, Target
 
 dashboard = Dashboard(
     title="drand",
@@ -11,7 +11,7 @@ dashboard = Dashboard(
     panels=[
         simple_graph(
             "drand.c4dt.org: connectivity",
-            "drand.check-connectivity",
+            Target(target="drand.check-connectivity"),
             GridPos(h=8, w=24, x=0, y=0),
             UNITS.SECONDS,
             frequency=1,
@@ -19,7 +19,7 @@ dashboard = Dashboard(
         ),
         simple_graph(
             "drand: memory usage",
-            "drand.get-used-memory",
+            Target(target="drand.get-used-memory"),
             GridPos(h=8, w=12, x=0, y=8),
             UNITS.KILO_BYTES,
             frequency=1,
@@ -27,7 +27,7 @@ dashboard = Dashboard(
         ),
         simple_graph(
             "drand: CPU usage",
-            "drand.get-cpu-percentage",
+            Target(target="drand.get-cpu-percentage"),
             GridPos(h=8, w=12, x=12, y=8),
             UNITS.PERCENT_FORMAT,
             frequency=1,
@@ -35,7 +35,7 @@ dashboard = Dashboard(
         ),
         simple_graph(
             "drand.c4dt.org: TTY activity",
-            "drand.get-tty-activity",
+            Target(target="drand.get-tty-activity"),
             GridPos(h=8, w=24, x=0, y=16),
             UNITS.COUNTS_PER_MIN,
             frequency=1,

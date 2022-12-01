@@ -1,6 +1,6 @@
 """Cothority dashboard"""
 
-from common import DASHBOARD_TIME_SPAN, simple_graph
+from common import DASHBOARD_TIME_SPAN, DATA_SOURCE_GRAPHITE, simple_graph
 from grafanalib import formatunits as UNITS
 from grafanalib.core import Dashboard, GridPos, Heatmap, HeatmapColor, Target
 
@@ -11,7 +11,7 @@ dashboard = Dashboard(
     panels=[
         simple_graph(
             "omniledger: login wordpress",
-            "omniledger.login-wordpress",
+            Target(target="omniledger.login-wordpress"),
             GridPos(h=8, w=24, x=0, y=0),
             UNITS.SECONDS,
             frequency=30,
@@ -19,7 +19,7 @@ dashboard = Dashboard(
         ),
         simple_graph(
             "cothority: transfer a coin",
-            "cothority.transfer-coin",
+            Target(target="cothority.transfer-coin"),
             GridPos(h=8, w=12, x=0, y=8),
             UNITS.SECONDS,
             frequency=30,
@@ -27,7 +27,7 @@ dashboard = Dashboard(
         ),
         simple_graph(
             "cothority: call BEvm",
-            "cothority.call-bevm",
+            Target(target="cothority.call-bevm"),
             GridPos(h=8, w=12, x=12, y=8),
             UNITS.SECONDS,
             frequency=30,
@@ -44,6 +44,7 @@ dashboard = Dashboard(
                     ),
                 ),
             ],
+            dataSource=DATA_SOURCE_GRAPHITE,
             color=HeatmapColor(mode="opacity"),
             dataFormat="tsbuckets",
             reverseYBuckets=True,
