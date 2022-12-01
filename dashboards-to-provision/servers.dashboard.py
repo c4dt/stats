@@ -1,6 +1,6 @@
 """Websites dashboard"""
 
-from common import DASHBOARD_TIME_SPAN
+from common import DASHBOARD_TIME_SPAN, DATA_SOURCE_GRAPHITE
 from grafanalib import formatunits as UNITS
 from grafanalib.core import Dashboard, GridPos, Stat, Target, Threshold
 
@@ -18,6 +18,7 @@ dashboard = Dashboard(
                     target="server.stats.disk-usage",
                 )
             ],
+            dataSource=DATA_SOURCE_GRAPHITE,
             reduceCalc="lastNotNull",
             thresholds=[
                 Threshold(index=0, color="green", value=0.0),
