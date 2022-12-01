@@ -14,7 +14,7 @@ dashboard = Dashboard(
             Target(target="drand.check-connectivity"),
             GridPos(h=8, w=24, x=0, y=0),
             UNITS.SECONDS,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=2,
         ),
         simple_graph(
@@ -22,7 +22,7 @@ dashboard = Dashboard(
             Target(target="drand.get-used-memory"),
             GridPos(h=8, w=12, x=0, y=8),
             UNITS.KILO_BYTES,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=200000,
         ),
         simple_graph(
@@ -30,7 +30,7 @@ dashboard = Dashboard(
             Target(target="drand.get-cpu-percentage"),
             GridPos(h=8, w=12, x=12, y=8),
             UNITS.PERCENT_FORMAT,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=1.5,
         ),
         simple_graph(
@@ -38,7 +38,7 @@ dashboard = Dashboard(
             Target(target="drand.get-tty-activity"),
             GridPos(h=8, w=24, x=0, y=16),
             UNITS.COUNTS_PER_MIN,
-            frequency=1,
+            frequency=1 * 60,
             alert_at=300,
         ),
     ],

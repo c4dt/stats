@@ -31,7 +31,7 @@ def simple_graph(
     pos: GridPos,
     y_axis_format: str,
     *,
-    frequency: int,
+    frequency: int,  # seconds
     alert_at: Union[int, float],
 ) -> Graph:
     """Return a Graph with a single target and its alert value."""
@@ -55,12 +55,12 @@ def simple_graph(
         alert=Alert(
             name=title,
             message=title,
-            frequency=f"{frequency}m",
-            gracePeriod=f"{frequency*4}m",
+            frequency=f"{frequency}s",
+            gracePeriod=f"{frequency*4}s",
             alertConditions=[
                 AlertCondition(
                     target=target,
-                    timeRange=TimeRange(f"{frequency*4}m", "now"),
+                    timeRange=TimeRange(f"{frequency*4}s", "now"),
                     evaluator=GreaterThan(alert_at),
                     operator=OP_AND,
                     reducerType=RTYPE_AVG,
