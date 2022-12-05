@@ -1,3 +1,0 @@
-#!/bin/sh -eu
-
-bin/cas-test --user-data-path data/cas/userdata-wordpress wordpress https://c4dt.org
