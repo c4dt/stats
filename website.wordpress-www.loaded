@@ -1,3 +1,4 @@
 #!/bin/sh -eu
 
-bin/curl-it https://www.c4dt.org | grep WordPress
+bin/curl-it https://c4dt.epfl.ch |
+	grep -F 'Center for digital trust'
