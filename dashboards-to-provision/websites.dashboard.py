@@ -18,7 +18,7 @@ dashboard = Dashboard(
             alert_at=3,
         ),
         simple_graph(
-            "www.c4dt.org: loading time",
+            "c4dt.epfl.ch: loading time",
             Target(target="website.wordpress-www.loaded"),
             GridPos(h=8, w=8, x=8, y=0),
             UNITS.SECONDS,
