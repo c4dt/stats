@@ -2,7 +2,8 @@
 
 from common import DASHBOARD_TIME_SPAN, simple_graph
 from grafanalib import formatunits as UNITS
-from grafanalib.core import Dashboard, GridPos, Target
+from grafanalib.core import Dashboard, GridPos, Heatmap, HeatmapColor, Target
+from grafanalib.influxdb import InfluxDBTarget
 
 dashboard = Dashboard(
     title="websites",
@@ -48,6 +49,28 @@ dashboard = Dashboard(
             UNITS.SECONDS,
             frequency=1 * 60,
             alert_at=1,
+        ),
+        Heatmap(
+            title="websites hits",
+            gridPos=GridPos(h=12, w=24, x=0, y=16),
+            targets=[
+                InfluxDBTarget(
+                    query="""
+                    from(bucket: "stats")
+                      |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+                      |> filter(fn: (r) => r._measurement == "website-hits")
+                      |> group(columns: ["service"])
+                      |> aggregateWindow(
+                           every: duration(v: int(v: v.windowPeriod) / 5),
+                           fn: sum,
+                         )
+                    """,
+                ),
+            ],
+            dataFormat="tsbuckets",
+            yBucketBound="middle",
+            reverseYBuckets=True,
+            color=HeatmapColor(colorScheme="interpolateReds"),
         ),
     ],
 ).auto_panel_ids()
