@@ -24,9 +24,6 @@ ssh stats_client@srv1.c4dt.org tail -n +$cursor /var/log/traefik/access |
 					return "cryptpad"
 				case /^library\.c4dt\.org\//:
 					return "library"
-				case /^demo\.c4dt\.org\/omniledger\//:
-				case /^login\.c4dt\.org\//:
-					return "login"
 				case /^matrix\.c4dt\.org\//:
 					return "matrix"
 				case /^oh19\.c4dt\.org\//:
