@@ -9,6 +9,10 @@
 /go/
 /snap/
 /venv/
+/.config/htop/
+/.lesshst
+/.selected_editor
+/.viminfo
 
 # identity
 /.local/
@@ -16,3 +20,6 @@
 
 # cloned
 /src/
+
+# Added by ansible-config
+docker-compose.yaml
