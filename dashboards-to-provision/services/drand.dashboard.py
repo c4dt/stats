@@ -29,9 +29,9 @@ dashboard = Dashboard(
             "drand: CPU usage",
             Target(target="drand.get-cpu-percentage"),
             GridPos(h=8, w=12, x=12, y=8),
-            UNITS.PERCENT_FORMAT,
+            UNITS.NO_FORMAT,
             frequency=1 * 60,
-            alert_at=1.5,
+            alert_at=10,
         ),
         simple_graph(
             "drand.c4dt.org: TTY activity",
