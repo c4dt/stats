@@ -22,6 +22,8 @@ from grafanalib.core import (
 from grafanalib.influxdb import InfluxDBTarget
 
 
+# the 'every' in the 'aggregateWindow' will always aggregate to 800 points,
+# no matter the range being shown.
 def target(server_name: str) -> InfluxDBTarget:
     """Generate Target for disk usage on given server"""
     return InfluxDBTarget(
@@ -33,7 +35,8 @@ def target(server_name: str) -> InfluxDBTarget:
             |> filter(fn: (r) => r.host == "{server_name}")
             |> filter(fn: (r) => r._field == "used_percent")
             |> keep(columns: ["_time", "_value", "path"])
-            |> last()
+            |> aggregateWindow(every: duration(v:(uint(v: v.timeRangeStop) -
+               uint(v: v.timeRangeStart))/uint(v: 800)), fn: mean)
         """,
     )
 
