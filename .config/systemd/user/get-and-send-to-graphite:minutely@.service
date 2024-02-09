@@ -5,3 +5,4 @@ Description=Get output of %i and send it to Graphite
 Type=oneshot
 WorkingDirectory=%h
 ExecStart=/bin/sh -euxc 'time=`date +%%s`; output=`./%i`; echo %i $output $time | bin/send-to-graphite'
+TimeoutSec=1m

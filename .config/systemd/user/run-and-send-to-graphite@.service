@@ -5,3 +5,4 @@ Description=run %i and send it to Graphite
 Type=oneshot
 WorkingDirectory=%h
 ExecStart=/bin/sh -euxc './%i | bin/send-to-graphite'
+TimeoutSec=1m
